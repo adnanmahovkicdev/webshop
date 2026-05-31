@@ -1,6 +1,6 @@
 import { type ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
-import {Locale, localesConfig} from "@/src/config/i18n";
+import {Locale, localesConfig} from "@/config/i18n";
 
 // Ovo je standardna shadcn utility funkcija - spaja CSS klase
 // i rješava konflikte između Tailwind klasa
