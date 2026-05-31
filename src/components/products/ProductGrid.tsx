@@ -1,8 +1,9 @@
 import ProductCard from "./ProductCard"
 import { getProducts } from "@/lib/actions/products"
 
-export default async function ProductGrid() {
-    const products = await getProducts()
+export default async function ProductGrid({ limit }: { limit?: number }) {
+    const allProducts = await getProducts()
+    const products = limit ? allProducts.slice(0, limit) : allProducts
 
     if (products.length === 0) {
         return (
