@@ -45,12 +45,11 @@ export const productImages = pgTable("product_images", {
 // Clerk upravlja autentikacijom, mi čuvamo samo naše podatke
 export const users = pgTable("users", {
     id:        uuid("id").defaultRandom().primaryKey(),
-    clerkId:   varchar("clerk_id", { length: 255 }).notNull().unique(), // Clerk user ID
     email:     varchar("email", { length: 255 }).notNull().unique(),
     firstName: varchar("first_name", { length: 255 }),
     lastName:  varchar("last_name", { length: 255 }),
     phone:     varchar("phone", { length: 50 }),
-    role:      varchar("role", { length: 50 }).notNull().default("customer"), // customer | admin
+    role:      varchar("role", { length: 50 }).notNull().default("customer"),
     createdAt: timestamp("created_at").notNull().defaultNow(),
 })
 
